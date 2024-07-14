@@ -69,7 +69,7 @@ function App() {
   return (
     <>
       <div className='flex justify-center items-center h-screen bg-slate-800'> 
-        <div className='w-3/6 md:w-5/6 lg:w-4/6 h-5/6 border-2 rounded-3xl overflow-hidden relative'>
+        <div className='w-11/12 md:w-5/6 lg:w-4/6 h-max border-2 rounded-3xl overflow-hidden relative'>
           <img className='absolute inset-0 w-full h-full object-cover' src={WeatherImage} alt="Weather_img"/>
 
           <div className='relative grid h-full grid-cols-1 md:grid-cols-10'>
@@ -93,7 +93,7 @@ function App() {
 
               <hr className='w-11/12 h-px m-5 bg-slate-500 border-0'/>
               <p className="text-white text-4xl text-center font-bold"> {WeatherData?.weather[0].description} </p>
-              <img className='w-5/12 flex-1 ml-6' src={WeatherIcon} alt="Icon"/>
+              <img className='w-5/12 flex-1 ml-6 mt-6' src={WeatherIcon} alt="Icon"/>
             </div>
           </div>
         </div>
