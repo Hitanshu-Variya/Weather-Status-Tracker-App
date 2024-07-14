@@ -7,7 +7,7 @@ function App() {
   const [DisplayPlace, setDisplayPlace] = useState<string>("Surat");
   const [WeatherData, setWeatherData] = useState<WeatherJSON | null>(null);
   const [WeatherImage, setWeatherImage] = useState<string | undefined>(undefined);
-  const [WeatherIcon, setWeatherIcon] = useState<string>("./src/assets/day-cloud-rain-icon.svg");
+  const [WeatherIcon, setWeatherIcon] = useState<string>("/assets/day-cloud-rain-icon.svg");
   const [CurrentTime, setCurrentTime] = useState<string>("");
   const [CurrentDay, setCurrentDay] = useState<string>(GetCurrentDayAndDate()[0]);
   const [CurrentDate, setCurrentDate] = useState<string>(GetCurrentDayAndDate()[1]);
@@ -45,24 +45,24 @@ function App() {
       const WeatherID = WeatherData.weather[0].id;
       
       if(200 <= WeatherID && WeatherID <= 232) 
-        setWeatherImage("./src/assets/Thunderstorm.jpg");
+        setWeatherImage("/assets/Thunderstorm.jpg");
       else if(300 <= WeatherID && WeatherID <= 321) 
-        setWeatherImage("./src/assets/Drizzle.jpg");
+        setWeatherImage("/assets/Drizzle.jpg");
       else if(500 <= WeatherID && WeatherID <= 531) 
-        setWeatherImage("./src/assets/Rain.jpg");
+        setWeatherImage("/assets/Rain.jpg");
       else if(600 <= WeatherID && WeatherID <= 622) 
-        setWeatherImage("./src/assets/Snow.jpg");
+        setWeatherImage("/assets/Snow.jpg");
       else if(701 <= WeatherID && WeatherID <= 741) 
-        setWeatherImage("./src/assets/Mist.jpg");
+        setWeatherImage("/assets/Mist.jpg");
       else if(751 <= WeatherID && WeatherID <= 781) 
-        setWeatherImage("./src/assets/Tornado.jpg");
+        setWeatherImage("/assets/Tornado.jpg");
       else if(800 <= WeatherID && WeatherID <= 804) 
-        setWeatherImage("./src/assets/Clear sky.jpg");
+        setWeatherImage("/assets/Clear sky.jpg");
 
-      setWeatherIcon("./src/assets/day-cloud-rain-icon.svg");
+      setWeatherIcon("/assets/day-cloud-rain-icon.svg");
     }
     else {
-      setWeatherIcon("./src/assets/alert-icon.svg");
+      setWeatherIcon("/assets/alert-icon.svg");
     }
   }, [WeatherData]);
 
