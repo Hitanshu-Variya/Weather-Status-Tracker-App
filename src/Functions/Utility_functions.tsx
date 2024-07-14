@@ -55,7 +55,11 @@ const GetCurrentTime = () => {
         meridian = "AM";
     }
 
-    return (Hours + ":" + minutes + ":" + seconds + " " + meridian);
+    var new_Hours = Hours.toString();
+    if(new_Hours.length === 1)
+        new_Hours = "0" + new_Hours;
+
+    return (new_Hours + ":" + minutes + ":" + seconds + " " + meridian);
 }
 
 const GetCurrentDayAndDate = () => {
