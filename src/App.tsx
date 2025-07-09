@@ -70,7 +70,7 @@ function App() {
     <>
       <div className='flex justify-center items-center h-screen bg-slate-800'> 
         <div className='w-11/12 md:w-5/6 lg:w-4/6 h-max border-2 rounded-3xl overflow-hidden relative'>
-          <img className='absolute inset-0 w-full h-full object-cover' src={WeatherImage} alt="Weather_img"/>
+          <img className='absolute inset-0 w-full h-full object-cover' src={WeatherImage} alt="Weather_img" loading="lazy"/>
 
           <div className='relative grid h-full grid-cols-1 md:grid-cols-10'>
             <div className='hidden sm:hidden md:block md:col-span-6'>
