@@ -19,11 +19,19 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const [Day, TodaysDate] = GetCurrentDayAndDate();
-    const timer = setInterval(() => {setCurrentDay(Day); setCurrentDate(TodaysDate)}, 86400000);
+    const updateDate = () => {
+      const [day, todaysDate] = GetCurrentDayAndDate();
+      setCurrentDay(day);
+      setCurrentDate(todaysDate);
+    };
 
-    return () => {clearInterval(timer)};
+    updateDate();
+
+    const timer = setInterval(updateDate, 86400000);
+
+    return () => clearInterval(timer);
   }, []);
+  
 
   useEffect(() => {
     if(DisplayPlace) {

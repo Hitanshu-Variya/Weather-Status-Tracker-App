@@ -34,33 +34,25 @@ const HandleNULLWeatherData = () => {
     return (<div className="text-center text-white font-semibold text-xl"> No Such Place exists! Check Again!</div>);
 }
 
-const GetCurrentTime = () => {
-    const date = new Date();
-    var seconds = date.getSeconds().toString();
-    var minutes = date.getMinutes().toString();
-    var Hours = date.getHours();
-    var meridian = "";
+function GetCurrentTime(): string {
+  const now = new Date();
+  let hours = now.getHours();
+  const minutes = now.getMinutes();
+  const seconds = now.getSeconds();
+  const ampm = hours >= 12 ? 'PM' : 'AM';
 
-    if(seconds.length === 1)
-        seconds = "0" + seconds;
+  hours = hours % 12;
+  hours = hours ? hours : 12; 
 
-    if(minutes.length === 1)
-        minutes = "0" + minutes;
+  const formattedTime = [
+    hours.toString().padStart(2, '0'),
+    minutes.toString().padStart(2, '0'),
+    seconds.toString().padStart(2, '0'),
+  ].join(':');
 
-    if(Hours >= 12) {
-        Hours -= 12;
-        meridian = "PM";
-    }
-    else {
-        meridian = "AM";
-    }
-
-    var new_Hours = Hours.toString();
-    if(new_Hours.length === 1)
-        new_Hours = "0" + new_Hours;
-
-    return (new_Hours + ":" + minutes + ":" + seconds + " " + meridian);
+  return `${formattedTime} ${ampm}`;
 }
+
 
 const GetCurrentDayAndDate = () => {
     const Days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
