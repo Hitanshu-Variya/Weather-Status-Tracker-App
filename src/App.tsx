@@ -92,7 +92,7 @@ function App() {
                 onKeyUp={(event) => HandleKeyUP(event, setDisplayPlace, PlaceName)} />  
 
               <hr className='w-11/12 h-px m-5 bg-slate-500 border-0'/>
-              <p className="text-white text-4xl text-center font-bold"> {WeatherData?.weather[0].description} </p>
+              <p className="text-black text-4xl text-center font-bold"> {WeatherData?.weather[0].description} </p>
               <img className='w-5/12 flex-1 ml-6 mt-6' src={WeatherIcon} alt="Icon"/>
             </div>
           </div>

@@ -1,13 +1,13 @@
 import WeatherJSON from "../Interfaces/WeatherJSON";
-import API_KEY from "../API_KEY";
 
 const GetWeatherStats = async (Place:string | null) => {
     if(Place === null)
         return null;
-  
-    let URL = `https://api.openweathermap.org/data/2.5/weather?q=${Place}&units=metric&appid=${API_KEY}`;
+
+  let URL = `https://api.openweathermap.org/data/2.5/weather?q=${Place}&units=metric&appid=${import.meta.env.VITE_API_KEY}`;
     const response = await fetch(URL);
-    const JSON_response = response.json();
+    const JSON_response = await response.json();
+    console.log(JSON_response);
     return JSON_response;
 }
   
